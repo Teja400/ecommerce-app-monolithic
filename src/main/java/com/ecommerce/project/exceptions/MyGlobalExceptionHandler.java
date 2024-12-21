@@ -23,7 +23,7 @@ public class MyGlobalExceptionHandler {
             String message = err.getDefaultMessage();
             response.put(fieldName, message);
         });
-        return new ResponseEntity<Map<String, String>>(response,
+        return new ResponseEntity<>(response,
                 HttpStatus.BAD_REQUEST);
     }
 
