@@ -102,7 +102,7 @@ public class OrderServiceImpl implements OrderService{
 
 
         OrderDTO orderDTO = modelMapper.map(order, OrderDTO.class);
-        orderItems.forEach(orderItem -> {orderDTO.getOrderItems().add(modelMapper.map(orderItem, OrderItemDTO.class));});
+        orderItems.forEach(orderItem -> orderDTO.getOrderItems().add(modelMapper.map(orderItem, OrderItemDTO.class)));
         orderDTO.setAddressId(addressId);
 
 

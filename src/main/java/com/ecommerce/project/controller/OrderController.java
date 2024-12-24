@@ -1,11 +1,10 @@
 package com.ecommerce.project.controller;
 
-import com.ecommerce.project.model.Order;
+
 import com.ecommerce.project.payload.OrderDTO;
 import com.ecommerce.project.payload.OrderRequestDTO;
 import com.ecommerce.project.service.OrderService;
 import com.ecommerce.project.util.AuthUtil;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
