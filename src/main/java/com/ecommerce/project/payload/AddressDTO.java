@@ -1,10 +1,7 @@
 package com.ecommerce.project.payload;
 
-import com.ecommerce.project.model.User;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 @NoArgsConstructor
