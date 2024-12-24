@@ -1,13 +1,12 @@
 package com.ecommerce.project.security;
 
-/*
+
 import com.ecommerce.project.model.AppRole;
 import com.ecommerce.project.model.Role;
 import com.ecommerce.project.model.User;
 import com.ecommerce.project.repositories.RoleRepository;
 import com.ecommerce.project.repositories.UserRepository;
 import org.springframework.boot.CommandLineRunner;
-*/
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -34,7 +33,7 @@ import com.ecommerce.project.security.jwt.AuthEntryPointJwt;
 import com.ecommerce.project.security.jwt.AuthTokenFilter;
 import com.ecommerce.project.security.services.UserDetailsServiceImpl;
 
-//import java.util.Set;
+import java.util.Set;
 
 @Configuration
 @EnableWebSecurity
@@ -112,7 +111,7 @@ public class WebSecurityConfig {
     }
 
 
-    /*
+
     @Bean
     public CommandLineRunner initData(RoleRepository roleRepository, UserRepository userRepository, PasswordEncoder passwordEncoder) {
         return args -> {
@@ -173,6 +172,6 @@ public class WebSecurityConfig {
             });
         };
     }
-    */
+
 
 }
