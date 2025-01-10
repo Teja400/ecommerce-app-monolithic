@@ -59,19 +59,11 @@ jobs:
     needs: build # Ensure this runs after the build job
 
     steps:
-      
-      # Step 8: Set up SSH for deployment
-      - name: Set up SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
 
       # Step 9: Deploy the application
       - name: Deploy to Server
         run: |
-          ssh -o StrictHostKeyChecking=no user@your-server << 'EOF'
-          docker pull your-docker-registry/ecommerce-app:latest
+          docker pull teja827/ecommerce-app:latest
           docker stop ecommerce-app || true
           docker rm ecommerce-app || true
           docker run -d --name ecommerce-app -p 8080:8080 your-docker-registry/ecommerce-app:latest
