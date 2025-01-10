@@ -66,4 +66,4 @@ jobs:
           docker pull teja827/ecom:latest
           docker stop ecom || true
           docker rm ecom || true
-          docker run -d --name ecom -p 8080:8080 teja827/ecom:latest
+          docker run -d -p 8080:8080 --name ecom ecom:latest
