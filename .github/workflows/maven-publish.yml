@@ -44,7 +44,7 @@ jobs:
       
     # Step 5: Build the Docker image
     - name: Build Docker Image
-      run: docker build -t your-docker-registry/ecommerce-app:latest .
+      run: docker build -t teja827/ecommerce-app:latest .
 
     # Step 6: Log in to Docker Hub or registry
     - name: Log in to Docker Registry
@@ -52,7 +52,7 @@ jobs:
 
     # Step 7: Push the Docker image
     - name: Push Docker Image
-      run: docker push your-docker-registry/ecommerce-app:latest
+      run: docker push teja827/ecommerce-app:latest
   
   deploy:
     runs-on: ubuntu-latest
