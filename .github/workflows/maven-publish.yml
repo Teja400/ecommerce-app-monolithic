@@ -63,8 +63,8 @@ jobs:
       # Step 9: Deploy the application
       - name: Deploy to Server
         run: |
-          docker pull teja827/ecommerce-app:latest
-          docker stop ecommerce-app || true
-          docker rm ecommerce-app || true
-          docker run -d --name ecommerce-app -p 8080:8080 your-docker-registry/ecommerce-app:latest
+          docker pull teja827/ecom:latest
+          docker stop ecom || true
+          docker rm ecom || true
+          docker run -d --name ecom -p 8080:8080 teja827/ecom:latest
           EOF
