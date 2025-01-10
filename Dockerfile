@@ -5,10 +5,10 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the application JAR file (adjust path as needed)
-COPY target/ecommerce-app.jar ecommerce-app.jar
+COPY target/ecom.jar ecom.jar
 
 # Expose the application's port (change to your app's port)
 EXPOSE 8080
 
 # Run the application
-CMD ["java", "-jar", "ecommerce-app.jar"]
+CMD ["java", "-jar", "ecom.jar"]
