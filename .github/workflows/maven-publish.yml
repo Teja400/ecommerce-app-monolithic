@@ -67,4 +67,3 @@ jobs:
           docker stop ecom || true
           docker rm ecom || true
           docker run -d --name ecom -p 8080:8080 teja827/ecom:latest
-          EOF
