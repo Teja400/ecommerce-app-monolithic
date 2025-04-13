@@ -39,7 +39,9 @@ jobs:
        
       - name: Deploy to VM
         run: |
-          ssh -i ${{ secrets.SSH_PRIVATE_KEY }} -o StrictHostKeyChecking=no ubuntu@34.123.118.100 <<EOF
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key.pem
+          chmod 400 private_key.pem
+          ssh -i private_key.pem -o StrictHostKeyChecking=no ubuntu@34.123.118.100 'echo "Successfully connected!" && uptime'
           cd /home/ubuntu/ecommerce-app-monolithic
           git pull origin main
           helm upgrade --install myapp ./helm-chart --set image.tag=latest
