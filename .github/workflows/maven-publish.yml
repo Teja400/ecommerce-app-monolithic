@@ -36,6 +36,13 @@ jobs:
         run: |
           docker build -t teja827/ecom:latest .
           docker push teja827/ecom:latest
+      
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 34.123.118.100 >> ~/.ssh/known_hosts
 
       - name: Deploy to VM
         run: |
