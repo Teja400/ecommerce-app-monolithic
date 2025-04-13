@@ -43,11 +43,12 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H 34.123.118.100 >> ~/.ssh/known_hosts
-
+      
       - name: Deploy to VM
         run: |
-          ssh -i ~/.ssh/id_rsa ubuntu@34.123.118.100 <<EOF
-          cd /home/ubuntu/ecommerce-app-monolithic
+          ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ubuntu@34.123.118.100 <<EOF
+          cd /home/ubuntu/your-repo
           git pull origin main
-          helm upgrade --install ecom ./helm-chart --set image.tag=latest
+          helm upgrade --install myapp ./helm-chart --set image.tag=latest
           EOF
+
