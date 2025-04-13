@@ -41,7 +41,7 @@ jobs:
         run: |
           echo "${{ secrets.GCP_VM_SSH_KEY }}" > private_key.pem
           chmod 400 private_key.pem
-          ssh -i private_key.pem -o StrictHostKeyChecking=no ubuntu@34.123.118.100 'echo "Successfully connected!" && uptime'
+          ssh -i private_key.pem -o StrictHostKeyChecking=no tsrin@34.123.118.100 'echo "Successfully connected!" && uptime'
           cd /home/ubuntu/ecommerce-app-monolithic
           git pull origin main
           helm upgrade --install ecom ./helm-chart --set image.tag=latest
