@@ -37,13 +37,10 @@ jobs:
           docker build -t teja827/ecom:latest .
           docker push teja827/ecom:latest
 
-      - name: Deploy to GCP VM via SSH
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.GCP_VM_HOST }}
-          username: ${{ secrets.GCP_VM_USER }}
-          key: ${{ secrets.GCP_VM_SSH_KEY }}
-          script: |
-            cd /home/ubuntu/ecommerce-app-monolithic
-            git pull
-            helm upgrade --install ecom ./helm-chart --set image.tag=latest
+      - name: Deploy to VM
+        run: |
+          ssh -i ~/.ssh/id_rsa ubuntu@34.123.118.100 <<EOF
+          cd /home/ubuntu/ecommerce-app-monolithic
+          git pull origin main
+          helm upgrade --install ecom ./helm-chart --set image.tag=latest
+          EOF
