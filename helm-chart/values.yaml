@@ -34,7 +34,7 @@ ingress:
   ingressClassName: "nginx"
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-  host: 34.55.198.81
+  host: ecom.local
   path: /
   tls: false
   tlsSecret: ""
