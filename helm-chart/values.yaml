@@ -27,3 +27,14 @@ envSecrets:
 # Optional environment variables (non-sensitive)
 env:
   SPRING_PROFILES_ACTIVE: "prod"
+
+# Ingress configuration
+ingress:
+  enabled: true
+  ingressClassName: "nginx"
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  host: ecom.example.com
+  path: /
+  tls: false
+  tlsSecret: ""
