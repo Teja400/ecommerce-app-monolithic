@@ -1,13 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Chart.Name }}
+  name: ecom
 spec:
   type: {{ .Values.service.type }}
   selector:
-    app: {{ .Chart.Name }}
+    app: ecom
   ports:
     - port: {{ .Values.service.port }}
       targetPort: 8080
-      nodePort: 30080
-

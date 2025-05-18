@@ -1,0 +1,18 @@
+image:
+  repository: teja827/ecom
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  host: ecom.local
+  path: /
+  pathType: Prefix
+
