@@ -19,7 +19,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         distribution: 'temurin'
-        java-version: '17'
+        java-version: '21'
 
     - name: Build with Maven
       run: mvn clean package -DskipTests
@@ -43,7 +43,7 @@ jobs:
 
     - name: Deploy with Helm
       run: |
-        helm upgrade --install ecom-app ./helm/ecom-app \
+        helm upgrade --install ecom ./helm/ecom \
           --set image.repository=$IMAGE_NAME \
           --set image.tag=latest \
           --kubeconfig $PWD/kubeconfig
